@@ -7,6 +7,7 @@
 
 <h1>My First Heading</h1>
 <p>My first paragraph.</p>
+
 <style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #00008F;
@@ -42,16 +43,16 @@
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 
 		embedded_svc.init(
-			'https://axaitalia--int.sandbox.my.salesforce.com',
-			'https://axaitalia--int.sandbox.my.salesforce-sites.com/axa',
+			'https://axaitalia--pre.sandbox.my.salesforce.com',
+			'https://axaitalia--pre.sandbox.my.salesforce-sites.com/axa',
 			gslbBaseURL,
-			'00D7a00000052gB',
+			'00D7a000000HWcx',
 			'Letizia_PCC_BOT',
 			{
-				baseLiveAgentContentURL: 'https://c.la3-c1cs-fra.salesforceliveagent.com/content',
+				baseLiveAgentContentURL: 'https://c.la2s-core1.sfdc-yzvdd4.salesforceliveagent.com/content',
 				deploymentId: '57208000000kEGS',
 				buttonId: '57308000000g28A',
-				baseLiveAgentURL: 'https://d.la3-c1cs-fra.salesforceliveagent.com/chat',
+				baseLiveAgentURL: 'https://d.la2s-core1.sfdc-yzvdd4.salesforceliveagent.com/chat',
 				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I08000000bp1yEAA_17e92760036',
 				isOfflineSupportEnabled: true
 			}
@@ -60,7 +61,7 @@
 
 	if (!window.embedded_svc) {
 		var s = document.createElement('script');
-		s.setAttribute('src', 'https://axaitalia--int.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.setAttribute('src', 'https://axaitalia--pre.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
 			initESW(null);
 		};
@@ -69,5 +70,7 @@
 		initESW('https://service.force.com');
 	}
 </script>
+
+
 </body>
 </html>
