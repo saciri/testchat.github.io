@@ -198,13 +198,17 @@
       embedded_svc.settings.loadingText = 'Caricamento...'; //parametro fisso da non modificare
  
      
-      var page = '';  		  			//REQUIRED.valore dipendente dalla pagina in cui il cliente avvia la chat: AAI, AXA MPS, AMF, Sinistri AAI, Sinistri AXA MPS
-      var emailFromUser = ''; 			//email del cliente loggato sull'area privata
-      var cf_piva = ''; 				//REQUIRED.Codice Fiscale o èartita IVA del cliente loggato sull'area privata
-      var nome = ''; 					//Nome dal cliente loggato sull'area privata
-      var cognome = ''; 				//Cognome dal cliente loggato sull'area privata
-      var ndg = ''; 					//NDG del cliente, Da non usare per i clienti multi NDG
-      var multindg = ''; 				//NDG del cliente. Da usare per i clienti multi NDG
+      var page = document.getElementById('page').value;  		//(*)		//valore dipendente dalla pagina in cui il cliente avvia la chat: AAI, MPS, Sinistri AAI, Sinistri MPS, AMF
+      var emailFromUser =document.getElementById('email').value;  			//email del cliente loggato sull'area privata
+      var cf_piva = document.getElementById('cf_piva').value; 	//(*)		//codice fiscale o partita IVA del cliente loggato sull'area privata
+      var nome = document.getElementById('name').value; 					//valore nome dal cliente
+      var cognome = document.getElementById('lastname').value; 				//valore cognome dal cliente
+      var ndg = document.getElementById('ndg').value; 					//valore dipendente dal cliente abbia un unico ndg questo è popolato
+      var multindg = document.getElementById('multindg').value; 				//valore telefono dal cliente multindg s
+
+      var techCompany = 'AAI';			//parametro fisso da non modificare. Utilizzato dal CRM
+      var isMultiNdg = 0;				//parametro fisso da non modificare. Utilizzato dal CRM
+      var campoRicercaAccount = 'Codice_fiscale_ListView__c';				//parametro fisso da non modificare. Utilizzato dal CRM
       
       var techCompany = 'AAI';			//parametro fisso da non modificare. Utilizzato dal CRM
       var isMultiNdg = 0 ;				//parametro fisso da non modificare. Utilizzato dal CRM
@@ -329,6 +333,17 @@
 			}
 		);
 	};
+
+	if (!window.embedded_svc) {
+		var s = document.createElement('script');
+		s.setAttribute('src', 'https://axaitalia--int.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.onload = function() {
+			initESW(null);
+		};
+		document.body.appendChild(s);
+	} else {
+		initESW('https://service.force.com');
+	}
 
 
 </script>
