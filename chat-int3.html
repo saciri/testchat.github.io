@@ -1,0 +1,343 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to Firebase Hosting</title>
+
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/9.6.6/firebase-app-compat.js"></script>
+  
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/9.6.6/firebase-auth-compat.js"></script>
+  <script defer src="/__/firebase/9.6.6/firebase-database-compat.js"></script>
+  <script defer src="/__/firebase/9.6.6/firebase-firestore-compat.js"></script>
+  <script defer src="/__/firebase/9.6.6/firebase-functions-compat.js"></script>
+  <script defer src="/__/firebase/9.6.6/firebase-messaging-compat.js"></script>
+  <script defer src="/__/firebase/9.6.6/firebase-storage-compat.js"></script>
+  <script defer src="/__/firebase/9.6.6/firebase-analytics-compat.js"></script>
+  <script defer src="/__/firebase/9.6.6/firebase-remote-config-compat.js"></script>
+  <script defer src="/__/firebase/9.6.6/firebase-performance-compat.js"></script>
+  <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+  <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+  <script>
+    with (require('./nano')) {
+      get('/hello', 'Hello, world');
+  
+      get('/index.html', readfile('index.html'));
+  
+      static_file('/about.html');
+  
+      get('/bye', function() {
+          return 'Bye~ ' + request.args['name'];
+      });
+  
+      get('/rand', function() {
+          return '' + Math.ceil(Math.random() * 100000);
+      });
+  
+      get(/\/greet\/(.*)/, function(match) {
+          return 'Halo, ' + match[1];
+      });
+  }
+  </script>
+
+  <style media="screen">
+    body {
+      background: #ECEFF1;
+      color: rgba(0, 0, 0, 0.87);
+      font-family: Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #message {
+      background: white;
+      max-width: 360px;
+      margin: 100px auto 16px;
+      padding: 32px 24px;
+      border-radius: 3px;
+    }
+
+    #message h2 {
+      color: #ffa100;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 0 0 8px;
+    }
+
+    #message h1 {
+      font-size: 22px;
+      font-weight: 300;
+      color: rgba(0, 0, 0, 0.6);
+      margin: 0 0 16px;
+    }
+
+    #message p {
+      line-height: 140%;
+      margin: 16px 0 24px;
+      font-size: 14px;
+    }
+
+    #message a {
+      display: block;
+      text-align: center;
+      background: #039be5;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: white;
+      padding: 16px;
+      border-radius: 4px;
+    }
+
+    #message,
+    #message a {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    }
+
+    #load {
+      color: rgba(0, 0, 0, 0.4);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+
+      body,
+      #message {
+        margin-top: 0;
+        background: white;
+        box-shadow: none;
+      }
+
+      body {
+        border-top: 16px solid #ffa100;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="message"> 
+    <div style="color: red;"> ORG- INTEGRATION </div>
+      <div style="text-align: center;" ><img src="\fondoChat copia.jpg" id="imagen" style="width: 350 px;height: 200px;" /></div>
+      <h2>Welcome</h2>
+      <h1>Testing ChatBot Letizia_PCC_BOT</h1>
+      <h2>Home Page AAI default</h2>
+  
+      <label for="name">Name:</label>
+      <input type="text" id="name" value="Peter" style="width: 75px" />
+      <input type="text" id="lastname" value="Parker" style="width: 75px" />
+      <br><br>
+      <label for="email">Email:</label>
+      <input type="text" id="email" value="email@mail.mail" style="width: 150px" />
+      <br><br>
+  
+      <label for="ndg">Ndg:</label>
+      <input type="text" id="ndg" value="0066030000081421" style="width: 160px" />
+      <br>
+      <br>
+      <label for="ndg">IVA/CF:</label>
+      <input type="text" id="cf_piva" value="03679960785" style="width: 160px" />
+      <br>
+      <br>
+      <label for="ndg">Multindg:</label>
+      <input type="text" id="multindg"  style="width: 160px" />
+      <br>
+      <br>
+  
+      <label for="pets">Choose your Home Page from:</label>
+      <select name="pets" id="page" onchange="initESW('https://service.force.com')">
+        <option value="AAI">AAI</option>
+        <option value="AXA MPS">AXA MPS</option>
+        <option value="AMF">AMF</option>
+        <option value="Sinistri AAI">Sinistri AAI</option>
+        <option value="Sinistri AXA MPS">Sinistri AXA MPS</option>
+      </select>
+  
+      <br> <br> <h2> Clica per iniziare il Chat bot</h2>
+  
+      <img id="liveagent_button" onclick="bootstrapChat();" src="https://assistenza360.axa.it/images/project/chat/baloon-chatta.png" style="border: 0px none; cursor: pointer;" />
+  
+      <br> <br>
+  
+    </div>
+
+  <style type='text/css'>
+    .embeddedServiceHelpButton .helpButton .uiButton {
+      background-color: #00008F;
+      font-family: "Arial", sans-serif;
+    }
+
+    .embeddedServiceHelpButton .helpButton .uiButton:focus {
+      outline: 1px solid #00008F;
+    }
+  </style>
+
+  <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+  <script type='text/javascript'>
+
+    initESW('https://service.force.com');
+
+    function bootstrapChat() {
+      embedded_svc.bootstrapEmbeddedService();
+    }
+    function initESW(gslbBaseURL) {
+
+      embedded_svc.settings.displayHelpButton = false; //permette di visualizzare o meno il bottone standard. In questo caso lasciare false
+      embedded_svc.settings.language = 'it'; //parametro fisso da non modificare
+      embedded_svc.settings.defaultMinimizedText = 'Chatta con un esperto'; //parametro fisso da non modificare
+      embedded_svc.settings.disabledMinimizedText = 'Off-line'; //parametro fisso da non modificare
+      embedded_svc.settings.offlineSupportMinimizedText = 'Contattaci per informazioni';//parametro fisso da non modificare
+      embedded_svc.settings.loadingText = 'Caricamento...'; //parametro fisso da non modificare
+
+
+      var page = document.getElementById('page').value;  		//(*)		//valore dipendente dalla pagina in cui il cliente avvia la chat: AAI, MPS, Sinistri AAI, Sinistri MPS, AMF
+      var emailFromUser =document.getElementById('email').value;  			//email del cliente loggato sull'area privata
+      var cf_piva = document.getElementById('cf_piva').value; 	//(*)		//codice fiscale o partita IVA del cliente loggato sull'area privata
+      var nome = document.getElementById('name').value; 					//valore nome dal cliente
+      var cognome = document.getElementById('lastname').value; 				//valore cognome dal cliente
+      var ndg = document.getElementById('ndg').value; 					//valore dipendente dal cliente abbia un unico ndg questo è popolato
+      var multindg = document.getElementById('multindg').value; 				//valore telefono dal cliente multindg s
+
+      var techCompany = 'AAI';			//parametro fisso da non modificare. Utilizzato dal CRM
+      var isMultiNdg = 0;				//parametro fisso da non modificare. Utilizzato dal CRM
+      var campoRicercaAccount = 'Codice_fiscale_ListView__c';				//parametro fisso da non modificare. Utilizzato dal CRM
+
+
+      if (ndg === '' && multindg === '') {
+        techCompany = 'AXA MPS';
+      } else
+        if (ndg === '' && multindg !== '') {
+          ndg = multindg;
+          isMultiNdg = 1;
+        }
+
+      if (techCompany == 'AAI' && cf_piva.length == 11) {
+        campoRicercaAccount = 'AAI_Partita_IVA__c';
+      } else if (techCompany == 'AAI' && cf_piva.length == 16) {
+        campoRicercaAccount = 'AAI_Codice_fiscale__c';
+      } else if (techCompany == 'AXA MPS' && cf_piva.length == 11) {
+        campoRicercaAccount = 'Partita_IVA__c';
+      } else if (techCompany == 'AXA MPS' && cf_piva.length == 16) {
+        campoRicercaAccount = 'Fiscal_ID__c';
+      }
+
+      embedded_svc.settings.extraPrechatFormDetails = [
+        {
+          "label": "NDG",
+          "value": ndg,
+          "displayToAgent": false,
+          "transcriptFields": ["ndg__c"]
+        },
+        {
+          "label": "Codice Fiscale",
+          "value": cf_piva,
+          "displayToAgent": false
+        },
+        {
+          "label": "Compagnia",
+          "value": techCompany,
+          "displayToAgent": false,
+        },
+        {
+          "label": "Home Page From",
+          "value": page,
+          "displayToAgent": false,
+          "transcriptFields": ["homePageFrom__c"]
+        },
+        {
+          "label": "Name",
+          "value": nome,
+          "name": "FirstName",
+          "displayToAgent": true,
+          "transcriptFields": ["Name__c"]
+        },
+        {
+          "label": "LastName",
+          "value": cognome,
+          "name": "LastName",
+          "displayToAgent": true,
+          "transcriptFields": ["LastName__c"]
+        },
+        {
+          "label": "Email",
+          "value": emailFromUser,
+          "displayToAgent": true,
+          "transcriptFields": ["Email__c"]
+        },
+        {
+          "label": "IsMultiNdg",
+          "value": isMultiNdg,
+          "displayToAgent": false,
+          "transcriptFields": ["IsMultiNdg__c"]
+        }];
+
+      // && o ||
+
+            // alert('Nome->'+nome+' page->'+page+' ndg->'+ndg+' compa->'+techCompany);
+      // firebase deploy --only hosting
+     // var salida = getElementById("salida");
+      //salida = nome+' PAGE-'+page+'--ndg--'+ndg+'-
+      
+      embedded_svc.settings.extraPrechatInfo = [{
+        "entityFieldMaps": [
+          {
+            "doCreate": false,
+            "doFind": true,
+            "fieldName": "" + campoRicercaAccount + "",
+            "isExactMatch": true,
+            "label": "Codice Fiscale"
+          },
+          {
+            "doCreate": false,
+            "doFind": true,
+            "fieldName": "NDG__c",
+            "isExactMatch": true,
+            "label": "NDG"
+          },
+          {
+            "doCreate": false,
+            "doFind": true,
+            "fieldName": "TECH_Company__c",
+            "isExactMatch": true,
+            "label": "Compagnia"
+          }
+        ],
+        "saveToTranscript": "AccountId",
+        "entityName": "Account"
+      }];
+
+      embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+      embedded_svc.settings.entryFeature = 'LiveAgent';
+      embedded_svc.settings.autoOpenPostChat = true;
+
+        embedded_svc.init(
+        'https://axaitalia--int.sandbox.my.salesforce.com',
+        'https://axaitalia--int.sandbox.my.salesforce-sites.com/axa',
+        gslbBaseURL,
+        '00D7a00000052gB',
+
+        'Letizia_PCC_BOT',
+        {
+          baseLiveAgentContentURL: 'https://c.la3-c1cs-fra.salesforceliveagent.com/content',
+          deploymentId: '57208000000kEGS',
+          buttonId: '57308000000g28A',
+          baseLiveAgentURL: 'https://d.la3-c1cs-fra.salesforceliveagent.com/chat',
+          eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I08000000bp1yEAA_17e92760036',
+          isOfflineSupportEnabled: true
+        }
+      );
+    };
+
+  </script>
+
+</body>
+
+</html>
