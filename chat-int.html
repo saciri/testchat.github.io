@@ -5,6 +5,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CHAT AXA</title>
+	<script>
+       document.addEventListener("DOMContentLoaded", function() {
+           var newStyle = document.createElement('style');
+           document.head.appendChild(newStyle);
+           newStyle.appendChild(document.createTextNode(`
+               @font-face {
+                   font-family: 'FontTest';
+                   src: url('https://axaitalia--int.sandbox.my.salesforce.com/resource/FontTest') format('ttf');
+                   font-weight: normal;
+                   font-style: normal;
+               }
+           `));
+       });
+</script>
+<style>
+       body {
+           font-family: 'FontTest', sans-serif;
+       }
+</style>
 </head>
 
 <body>
