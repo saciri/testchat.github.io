@@ -1,3 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CHAT AXA</title>
+	<script>
+       document.addEventListener("DOMContentLoaded", function() {
+           var newStyle = document.createElement('style');
+           document.head.appendChild(newStyle);
+           newStyle.appendChild(document.createTextNode(`
+               @font-face {
+                   font-family: 'FontTest';
+                   src: url('https://axaitalia--int.sandbox.my.salesforce.com/resource/FontTest') format('woff2');
+                   font-weight: normal;
+                   font-style: normal;
+               }
+           `));
+       });
+</script>
+<style>
+       h2 {
+           font-family: 'FontTest', sans-serif;
+       }
+</style>
+</head>
+
+<body>
+  <div id="message"> 
+      <h2>Benvenuto</h2>
+      <h1>ChatBot Letizia_PCC_BOT</h1>
+  
+      <label for="name">Name:</label>
+      <input type="text" id="name" value="Nino" style="width: 75px" />
+      <input type="text" id="lastname" value="Malacchiei" style="width: 75px" />
+      <br><br>
+      <label for="email">Email:</label>
+      <input type="text" id="email" value="salvatore.cirincione@finconsgroup.com" style="width: 150px" />
+      <br><br>
+  
+      <label for="ndg">Ndg:</label>
+      <input type="text" id="ndg" value="0069016900069269" style="width: 160px" />
+      <br>
+      <br>
+      <label for="ndg">IVA/CF:</label>
+      <input type="text" id="cf_piva" value="MLCNNI81A01C352L" style="width: 160px" />
+      <br>
+      <br>
+      <label for="ndg">Multindg:</label>
+      <input type="text" id="multindg"  style="width: 160px" />
+      <br>
+      <br>
+  
+      <label for="pets">Choose your Home Page from:</label>
+      <select name="pets" id="page" onchange="initESW('https://service.force.com')">
+        <option value="AAI">AAI</option>
+        <option value="AXA MPS">AXA MPS</option>
+        <option value="AMF">AMF</option>
+        <option value="Sinistri AAI">Sinistri AAI</option>
+        <option value="Sinistri AXA MPS">Sinistri AXA MPS</option>
+      </select>
+  
+      <br> <br> <h2> Clica per iniziare il Chat bot</h2>
+  
+      <img id="liveagent_button" onclick="bootstrapChat();" src="https://assistenza360.axa.it/images/project/chat/baloon-chatta.png" style="border: 0px none; cursor: pointer;" />
+  
+      <br> <br>
+  
+    </div>
+
+  <style type='text/css'>
+    .embeddedServiceHelpButton .helpButton .uiButton {
+      background-color: #00008F;
+      font-family: "Arial", sans-serif;
+    }
+
+    .embeddedServiceHelpButton .helpButton .uiButton:focus {
+      outline: 1px solid #00008F;
+    }
+  </style>
+
 <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
@@ -17,3 +99,9 @@
 	};
 </script>
 <script type='text/javascript' src='https://axaitalia--threadligh.sandbox.my.site.com/ESWPortalinoChat1744962814280/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
+
+</body>
+
+</html>
+
