@@ -31,7 +31,17 @@
     }
   </style>
 
+
 <script type='text/javascript'>
+	window.addEventListener("onEmbeddedMessagingReady", () => {
+		console.log("Received the onEmbeddedMessagingReady event…");
+ 
+		// Send data to Salesforce
+		embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"AreaCase" : "Motor"});
+ 
+		// Remove any items from the previous list that you don't want to send
+		//embeddedservice_bootstrap.prechatAPI.removeHiddenPrechatFields(["Customer_ID"]);
+	});
 	function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'it'; // For example, enter 'en' or 'en-US'
@@ -50,7 +60,6 @@
 	};
 </script>
 <script type='text/javascript' src='https://axaitalia--threadligh.sandbox.my.site.com/ESWPortalinoChat1744962814280/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-
 
 </body>
 
